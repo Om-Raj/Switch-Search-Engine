@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BWB | Basic Web Browser</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <style media="screen">
+  /* Coded with ❤️ by Om Raj */
+body {
+  margin:0px;
+  text-align:center;
+  background-color:#fff;
+}
+#engine-list {
+  background-color:#fff;
+  width: 100%;
+  text-align:center;
+  border-bottom:1px solid #eee;
+}
+.tablinks {
+  width: 25%;
+  text-decoration-style: none;
+  background-color:#fff;
+  border: 0px;
+}
+.engine {
+  position: absolute;
+  width: 100%;
+  top: 20%;
+  display:none;
+}
+.box {
+  margin-top: 20px;
+  width: 100%;
+}
+.input {
+  padding: 2px;
+  width:23em;
+  height:2em;
+  font-size:1em;
+  border:1px solid #aaa;
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.submit {
+  width:2em;
+  height:2em;
+  font-size:1em;
+  color: #fff;
+  background-color:rgb(33, 130, 255);
+  border: 1px solid rgb(33, 130, 255);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+code {
+  font-size: 1.5em;
+  margin-top:50%;
+  padding:10px;
+  border-radius:5px;
+  background-color:#eee;
+}
+b {
+  font-family: sans-serif;
+}
+  </style>
+  <body>
+  <div id="engine-list">
+          <button onclick="show(event,'google')" class="tablinks"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png" alt="Google" width="50em"/></button><button onclick="show(event,'ddg')" class="tablinks"><img src="https://images.encyclopediadramatica.rs/2/2c/DDGlogo.png" alt="DuckDuckGo" width="50em"/></button><button onclick="show(event,'bing')" class="tablinks"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Bing_favicon.svg/1024px-Bing_favicon.svg.png" alt="Bing" width="50em"/></button><button onclick="show(event,'yahoo')" class="tablinks"><img src="https://www.yahoo.com/favicon.ico" alt="Yahoo" width="50em"/></button>
+  </div>
+  <div id="google" class="engine">
+          <img src="https://www.google.co.in/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png" width="300em"/>
+      <div class="box">
+          <form method=GET action="https://www.google.com/search">
+              <input type="search" required autofocus autocomplete="off" placeholder="Search" name="q" class="input"/><button type="submit" class="submit"><i class="fa fa-search"></i></button>
+          </form>
+      </div>
+  </div>
+  <div id="ddg" class="engine">
+          <img src="https://www.filecritic.com/wp-content/uploads/2016/01/DuckDuckGo-Logo.png" width="400em"/>
+      <div class="box">
+          <form method=GET action="https://www.duckduckgo.com/">
+              <input type="search" required autofocus autocomplete="off" placeholder="Search" name="q" class="input"/><button type="submit" class="submit"><i class="fa fa-search"></i></button>
+          </form>
+      </div>
+  </div>
+  <div id="bing" class="engine">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Bing_logo_%282016%29.svg/240px-Bing_logo_%282016%29.svg.png" width="300em"/>
+      <div class="box">
+          <form method=GET action="https://www.bing.com/search">
+              <input type="search" required autofocus autocomplete="off" placeholder="Search" name="q" class="input"/><button type="submit" class="submit"><i class="fa fa-search"></i></button>
+          </form>
+      </div>
+  </div>
+  <div id="yahoo" class="engine">
+          <img src="https://fiu-assets-2-syitaetz61hl2sa.stackpathdns.com/static/use-media-items/15/14245/upto-700xauto/56fc6e1d/@2x/Yahoo_Logo_Purple.png" width="300em"/>
+      <div class="box">
+          <form method=GET action="https://search.yahoo.com/search">
+              <input type="search" required autofocus autocomplete="off" placeholder="Search" name="p" class="input"/><button type="submit" class="submit"><i class="fa fa-search"></i></button>
+          </form>
+      </div>
+  </div>
+  <div style="position:absolute;top:50%;width:100%;" id="info">
+      <code>{ Choose your search engine from above }</code>
+  </div>
+  <b style="position:absolute;left:0px;bottom:10%;color:rgba(0,0,0,0.5);width:100%">&lt;/&gt; with ❤️ by Om-Raj</b>
+  <script type="text/javascript">
+  // Coded with ❤️ by Om Raj
+function show(event, engineName) {
+  navigator.vibrate(20);
+    var i, tabcontent;
+    tabcontent = document.getElementsByClassName("engine");
+for (i = 0; i < tabcontent.length; i++) {
+     tabcontent[i].style.display = "none";
+    } document.getElementById(engineName).style.display = "block";
+document.getElementById('info').style.display = "none";
+}
+  </script>
+  </body>
+</html>
