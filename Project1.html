@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>BWB | Basic Web Browser</title>
+    <title>SSE-Switch-Search-Engine</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <style media="screen">
@@ -11,6 +11,7 @@ body {
   margin:0px;
   text-align:center;
   background-color:#fff;
+  font-family: 'Roboto', sans-serif;
 }
 #engine-list {
   background-color:#fff;
@@ -19,7 +20,9 @@ body {
   border-bottom:1px solid #eee;
 }
 .tablinks {
-  width: 25%;
+  width: 9%;
+  margin-right: 8%;
+  margin-left: 8%;
   text-decoration-style: none;
   background-color:#fff;
   border: 0px;
@@ -31,8 +34,12 @@ body {
   display:none;
 }
 .box {
+  padding-right: 25%;
+  padding-left: 25%;
+  width: 50%;
+}
+form {
   margin-top: 20px;
-  width: 100%;
 }
 .input {
   padding: 2px;
@@ -61,50 +68,66 @@ code {
   border-radius:5px;
   background-color:#eee;
 }
-b {
-  font-family: sans-serif;
+@media only screen and (max-width: 992px) {
+  .tablinks{width: 15%;margin-left: 5%;margin-right: 5%;}
+  .box{padding:10%;width: 80%;}
+  code {font-size: 1.5em;}
+  .input {width: 80%;}
+}
+@media only screen and (max-width: 768px) {
+  .tablinks{width: 20%;margin-left: 2.5%;margin-right: 2.5%;}
+  .box{padding:10%;width: 80%;}
+  code {font-size: 1.5em;}
+  .input {width: 80%;}
+}
+@media only screen and (max-width: 480px) {
+  .tablinks{width: 25%;margin: 0px;}
+  .box{padding:0px;width: 100%;}
+  code {font-size: 1.25em;}
+  .input {width: 80%;}
+  b {font-size: 1.5em;}
 }
   </style>
   <body>
   <div id="engine-list">
-          <button onclick="show(event,'google')" class="tablinks"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png" alt="Google" width="50em"/></button><button onclick="show(event,'ddg')" class="tablinks"><img src="https://images.encyclopediadramatica.rs/2/2c/DDGlogo.png" alt="DuckDuckGo" width="50em"/></button><button onclick="show(event,'bing')" class="tablinks"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Bing_favicon.svg/1024px-Bing_favicon.svg.png" alt="Bing" width="50em"/></button><button onclick="show(event,'yahoo')" class="tablinks"><img src="https://www.yahoo.com/favicon.ico" alt="Yahoo" width="50em"/></button>
+          <button onclick="show(event,'google')" class="tablinks"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-favicon-2015.png" alt="Google" width="50%"/></button><button onclick="show(event,'ddg')" class="tablinks"><img src="https://images.encyclopediadramatica.rs/2/2c/DDGlogo.png" alt="DuckDuckGo" width="50%"/></button><button onclick="show(event,'bing')" class="tablinks"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Bing_favicon.svg/1024px-Bing_favicon.svg.png" alt="Bing" width="50%"/></button><button onclick="show(event,'yahoo')" class="tablinks"><img src="https://www.yahoo.com/favicon.ico" alt="Yahoo" width="50%"/></button>
   </div>
   <div id="google" class="engine">
-          <img src="https://www.google.co.in/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png" width="300em"/>
-      <div class="box">
-          <form method=GET action="https://www.google.com/search">
-              <input type="search" required autofocus autocomplete="off" placeholder="Search" name="q" class="input"/><button type="submit" class="submit"><i class="fa fa-search"></i></button>
-          </form>
-      </div>
+    <div class="box">
+        <img src="https://www.google.co.in/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png" width="80%"/>
+        <form method=GET action="https://www.google.com/search">
+            <input type="search" required autofocus autocomplete="off" placeholder="Search" name="q" class="input"/><button type="submit" class="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
   </div>
   <div id="ddg" class="engine">
-          <img src="https://www.filecritic.com/wp-content/uploads/2016/01/DuckDuckGo-Logo.png" width="400em"/>
-      <div class="box">
-          <form method=GET action="https://www.duckduckgo.com/">
-              <input type="search" required autofocus autocomplete="off" placeholder="Search" name="q" class="input"/><button type="submit" class="submit"><i class="fa fa-search"></i></button>
-          </form>
-      </div>
+    <div class="box">
+        <img src="https://www.filecritic.com/wp-content/uploads/2016/01/DuckDuckGo-Logo.png" width="80%"/>
+        <form method=GET action="https://www.duckduckgo.com/">
+            <input type="search" required autofocus autocomplete="off" placeholder="Search" name="q" class="input"/><button type="submit" class="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
   </div>
   <div id="bing" class="engine">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Bing_logo_%282016%29.svg/240px-Bing_logo_%282016%29.svg.png" width="300em"/>
-      <div class="box">
-          <form method=GET action="https://www.bing.com/search">
-              <input type="search" required autofocus autocomplete="off" placeholder="Search" name="q" class="input"/><button type="submit" class="submit"><i class="fa fa-search"></i></button>
-          </form>
-      </div>
+    <div class="box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Bing_logo_%282016%29.svg/240px-Bing_logo_%282016%29.svg.png" width="80%"/>
+        <form method=GET action="https://www.bing.com/search">
+            <input type="search" required autofocus autocomplete="off" placeholder="Search" name="q" class="input"/><button type="submit" class="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
   </div>
   <div id="yahoo" class="engine">
-          <img src="https://fiu-assets-2-syitaetz61hl2sa.stackpathdns.com/static/use-media-items/15/14245/upto-700xauto/56fc6e1d/@2x/Yahoo_Logo_Purple.png" width="300em"/>
-      <div class="box">
-          <form method=GET action="https://search.yahoo.com/search">
-              <input type="search" required autofocus autocomplete="off" placeholder="Search" name="p" class="input"/><button type="submit" class="submit"><i class="fa fa-search"></i></button>
-          </form>
-      </div>
+    <div class="box">
+        <img src="https://fiu-assets-2-syitaetz61hl2sa.stackpathdns.com/static/use-media-items/15/14245/upto-700xauto/56fc6e1d/@2x/Yahoo_Logo_Purple.png" width="80%" style="border-radius:10px;"/>
+        <form method=GET action="https://search.yahoo.com/search">
+            <input type="search" required autofocus autocomplete="off" placeholder="Search" name="p" class="input"/><button type="submit" class="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
   </div>
   <div style="position:absolute;top:50%;width:100%;" id="info">
       <code>{ Choose your search engine from above }</code>
   </div>
-  <b style="position:absolute;left:0px;bottom:10%;color:rgba(0,0,0,0.5);width:100%">&lt;/&gt; with ❤️ by Om-Raj</b>
+  <b style="position:absolute;left:0px;bottom:10%;color:rgba(0,0,0,0.5);width:100%;font-size:1.25em;">&lt;/&gt; with ❤️ by Om-Raj</b>
   <script type="text/javascript">
   // Coded with ❤️ by Om Raj
 function show(event, engineName) {
